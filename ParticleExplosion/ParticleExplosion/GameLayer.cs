@@ -38,10 +38,10 @@ namespace ParticleExplosion
 			// Use the bounds to layout the positioning of our drawable assets
 			CCRect bounds = VisibleBoundsWorldspace;
 
-			// Register for touch events
-//			var touchListener = new CCEventListenerTouchAllAtOnce ();
-//			touchListener.OnTouchesBegan = OnTouchesBegan;
-//			AddEventListener (touchListener, this);
+			// Register for touch events 
+			var touchListener = new CCEventListenerTouchAllAtOnce ();
+			touchListener.OnTouchesBegan = OnTouchesBegan;
+			AddEventListener (touchListener, this);
 		}
 
 		void OnTouchesBegan (List<CCTouch> touches, CCEvent touchEvent)
