@@ -7,20 +7,29 @@ namespace ParticleExplosion
 {
 	public class GamePage : ContentPage
 	{
-		CocosSharpView gameView;
+		private CocosSharpView gameView;
 
 		public GamePage ()
 		{
+			var container = new Grid ();
+
+			var textField = new Entry (){Text = "Click here to edit", 
+				HorizontalOptions = LayoutOptions.Center, 
+				VerticalOptions = LayoutOptions.Center ,
+				HeightRequest = 50, 
+				WidthRequest = 300, 
+				BackgroundColor = Color.Transparent};
+
 			gameView = new CocosSharpView () {
+				DesignResolution = new Size (Constant.Width, Constant.Height),
 				HorizontalOptions = LayoutOptions.FillAndExpand,
 				VerticalOptions = LayoutOptions.FillAndExpand,
-				// Set the game world dimensions
-				DesignResolution = new Size (Constant.Width, Constant.Height),
-				// Set the method to call once the view has been initialised
 				ViewCreated = LoadGame
 			};
+			container.Children.Add (gameView);	
+			container.Children.Add (textField);
 
-			Content = gameView;
+			Content = container;
 		}
 
 		protected override void OnDisappearing ()

@@ -28,19 +28,20 @@ namespace ParticleExplosion
 				_factory.AliveSprites [i].Move ();
 			}
 		}
-		 
 
 		protected override void AddedToScene ()
 		{
 			base.AddedToScene ();
+
 			Schedule (GameLoop);
+
 			// Use the bounds to layout the positioning of our drawable assets
 			CCRect bounds = VisibleBoundsWorldspace;
 
 			// Register for touch events
-			var touchListener = new CCEventListenerTouchAllAtOnce ();
-			touchListener.OnTouchesBegan = OnTouchesBegan;
-			AddEventListener (touchListener, this);
+//			var touchListener = new CCEventListenerTouchAllAtOnce ();
+//			touchListener.OnTouchesBegan = OnTouchesBegan;
+//			AddEventListener (touchListener, this);
 		}
 
 		void OnTouchesBegan (List<CCTouch> touches, CCEvent touchEvent)
