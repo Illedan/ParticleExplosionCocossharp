@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{2644841B-521E-4ACB-937A-42F3452E9B23}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>ParticleExplosion</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ParticleExplosion.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GamePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameLayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MySprite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MySpriteContainer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MySpriteFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constant.cs" />
+  </ItemGroup>
+</Project>
