@@ -40,7 +40,7 @@ namespace ParticleExplosion
 			Sprite.Visible = false;
 
 			var explosion = new CCParticleExplosion (new CCPoint(0,0));
-			explosion.TotalParticles = 10;
+			explosion.TotalParticles = 50;
 			AddChild (explosion);
 			ScheduleOnce (dt => {
 				RemoveChild (explosion);
