@@ -10,7 +10,7 @@ namespace ParticleExplosion
 		private float _currentTime;
 		private float _nextSpawnTime;
 
-		public GameLayer () : base (CCColor4B.AliceBlue)
+		public GameLayer () : base (CCColor4B.Transparent)
 		{
 			_currentTime = 0.0f;
 			_nextSpawnTime = 0.0f;

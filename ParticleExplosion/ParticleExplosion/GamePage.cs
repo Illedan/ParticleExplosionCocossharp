@@ -11,7 +11,20 @@ namespace ParticleExplosion
 
 		public GamePage ()
 		{
+			BackgroundColor = Color.White;
 			var container = new Grid ();
+			container.RowDefinitions = new RowDefinitionCollection
+			{
+				new RowDefinition { Height = new GridLength(1, GridUnitType.Star) },
+				new RowDefinition { Height = new GridLength(1, GridUnitType.Star)  },
+			};
+
+			var browser = new WebView
+			{
+				Source = "https://google.com",
+				WidthRequest = 200,
+				HeightRequest = 200,
+			};
 
 			var textField = new Entry (){Text = "Click here to edit", 
 				HorizontalOptions = LayoutOptions.Center, 
@@ -24,10 +37,14 @@ namespace ParticleExplosion
 				DesignResolution = new Size (Constant.Width, Constant.Height),
 				HorizontalOptions = LayoutOptions.FillAndExpand,
 				VerticalOptions = LayoutOptions.FillAndExpand,
-				ViewCreated = LoadGame
+				ViewCreated = LoadGame,
+				BackgroundColor = Color.Transparent
 			};
-			container.Children.Add (gameView);	
-			container.Children.Add (textField);
+
+			container.Children.Add(browser,0,0);
+			container.Children.Add(textField, 0,1);
+			container.Children.Add(gameView);
+			Grid.SetRowSpan(gameView, 2);
 
 			Content = container;
 		}
